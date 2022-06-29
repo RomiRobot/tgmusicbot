@@ -147,24 +147,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "**• Aᴛ Fɪʀsᴛ Mᴀᴋᴇ Mᴇ Aᴅᴍɪɴ ...**")
+                        "**At First Make Me Admin ...**")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "** • I Aᴍ Rᴇᴀᴅʏ Tᴏ Pʟᴀʏ • ...**")
+                        message.chat.id, "**I Am Ready To Play...**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"**• Pʟᴇᴀsᴇ Mᴀɴᴜᴀʟʟʏ Aᴅᴅ [Assɪsᴛᴀɴᴛ](t.me/{ASSISTANT_USERNAME}) Iɴ Tʜɪs Gʀᴏᴜᴘ Oʀ Cᴀɴᴛᴀᴄᴛ Tᴏ [Bᴏᴛ Oᴡɴᴇʀ ](https://t.me/{OWNER_USERNAME}) • **")
+                        f"**Please Manually Add [Assistant](t.me/{ASSISTANT_USERNAME}) In This Group Or Cantact To [Bot Owner](https://t.me/{OWNER_USERNAME}) **")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"**• Pʟᴇᴀsᴇ Mᴀɴᴜᴀʟʟʏ Aᴅᴅ [Assɪsᴛᴀɴᴛ](t.me/{ASSISTANT_USERNAME}) Iɴ Tʜɪs Gʀᴏᴜᴘ Oʀ Cᴀɴᴛᴀᴄᴛ Tᴏ [Bᴏᴛ Oᴡɴᴇʀ ](https://t.me/{OWNER_USERNAME}) • **")
+            f"**Please Add Manually [Assistant](t.me/{ASSISTANT_USERNAME}) In This Group Or Cantact To [Bot Owner(https://t.me/{OWNER_USERNAME}) **")
         return
     
     audio = (
@@ -297,7 +297,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**• Pʟᴀʏ Mᴜsɪᴄ Lᴇss\nTʜᴀɴ {DURATION_LIMIT} Mɪɴᴜᴛᴇ • ...**"
+                f"**Play Music Less \n Than {DURATION_LIMIT} Minute ...**"
             )
             return
         requested_by = message.from_user.first_name
@@ -306,9 +306,9 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "**• Gɪᴠᴇ Mᴜsɪᴄ Nᴀᴍᴇ\nTᴏ Pʟᴀʏ Sᴏɴɢ •...**"
+                "**Give Music Name \n To Play Song...**"
             )
-        await lel.edit("**🔄 Pʀᴏᴄᴇssɪɴɢ • ...**")
+        await lel.edit("**🔄 Processing...**")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -333,7 +333,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**• Mᴜsɪᴄ Nᴏᴛ Fᴏᴜɴᴅ!\nTʀʏ Aɴᴏᴛɢᴇʀ •...**"
+                "**Music Not Found! \n Try Another...**"
             )
             print(str(e))
             return
@@ -365,7 +365,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**• Pʟᴀʏ Mᴜsɪᴄ Lᴇss\nTʜᴀɴ {DURATION_LIMIT} Mɪɴᴜᴛᴇ • ...**"
+                f"**Play Music Less \n Than {DURATION_LIMIT} Minute...**"
             )
             return
         requested_by = message.from_user.first_name
@@ -379,7 +379,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="**• Yᴏᴜʀ Sᴏɴɢ Qᴜᴇᴜᴇᴅ!\nAᴛ Pᴏsɪᴛɪᴏɴ » `{}` 🌷 ...**".format(position),
+            caption="**Your Song Queued! \n At Position » `{}` ...**".format(position),
             reply_markup=keyboard,
         )
     else:
@@ -396,7 +396,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**• Rᴏᴍɪ X Rᴏʙᴏᴛ Nᴏᴡ\n Pʟᴀʏɪɴɢ OP • ...**".format(),
+            caption="**Romi X Robot Now \n Playing OP...**".format(),
            )
 
     os.remove("final.png")
@@ -409,7 +409,7 @@ async def play(_, message: Message):
 async def pause(_, message: Message):
     await message.delete()
     await clientbot.pytgcalls.pause_stream(message.chat.id)
-    await message.reply_text("**▶️ Pᴀᴜsᴇᴅ • ...**"
+    await message.reply_text("**▶️ Paused...**"
     )
 
 
@@ -435,15 +435,15 @@ async def skip(_, message: Message):
     for x in clientbot.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("**Rᴏᴍɪ X Rᴏʙᴏᴛ Nᴏᴛʜɪɴɢ\nPʟᴀʏɪɴɢ • ...**")
+        await message.reply_text("**Romi X Robot Nothing \n Playing...**")
     else:
         queues.task_done(chat_id)
         
         if queues.is_empty(chat_id):
-            await message.reply_text("**• Qᴜᴇᴜᴇ Eᴍᴘᴛʏ, Lᴇᴀᴠɪɴɢ VC • ...**") 
+            await message.reply_text("**Queue Empty, Leaving VC...**") 
             await clientbot.pytgcalls.leave_group_call(chat_id)
         else:
-            await message.reply_text("**⏩ Sᴋɪᴘᴘᴇᴅ • ...**") 
+            await message.reply_text("**⏩ Skipped...**") 
             await clientbot.pytgcalls.change_stream(
                 chat_id, 
                 InputStream(
@@ -466,7 +466,7 @@ async def stop(_, message: Message):
         pass
 
     await clientbot.pytgcalls.leave_group_call(message.chat.id)
-    await message.reply_text("**❌ Sᴛᴏᴘᴘᴇᴅ • ...**"
+    await message.reply_text("**❌ Stopped...**"
     )
 
 
@@ -481,4 +481,4 @@ async def update_admin(client, message):
     for u in new_ads:
         new_admins.append(u.user.id)
     a[message.chat.id] = new_admins
-    await message.reply_text("**• Rᴇʟᴏᴀᴅᴇᴅ • ...**")
+    await message.reply_text("**Reloaded...**")
