@@ -127,7 +127,7 @@ async def play(_, message: Message):
     global que
     global useer
     await message.delete()
-    lel = await message.reply("**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 ...**")
+    lel = await message.reply("**•🔎  Sᴇᴀʀᴄʜɪɴɢ •...**")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -135,7 +135,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "Aditya_Player"
+        user.first_name = "Romi_Robot"
     usar = user
     wew = usar.id
     try:
@@ -147,24 +147,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "**💥 𝐀𝐭🤞𝐅𝐢𝐫𝐬𝐭 🥀 𝐌𝐚𝐤𝐞 ♥️ 𝐌𝐞 ⭐ 𝐀𝐝𝐦𝐢𝐧 😎 ...**")
+                        "**• Aᴛ Fɪʀsᴛ Mᴀᴋᴇ Mᴇ Aᴅᴍɪɴ ...**")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "** 😎 𝐈🤞𝐚𝐦 🥀 𝐑𝐞𝐚𝐝𝐲 ♥️ 𝐓𝐨 ⭐ 𝐏𝐥𝐚𝐲 😎 ...**")
+                        message.chat.id, "** • I Aᴍ Rᴇᴀᴅʏ Tᴏ Pʟᴀʏ • ...**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"**🥀 𝐏𝐥𝐞𝐚𝐬𝐞 𝐌𝐚𝐧𝐮𝐚𝐥𝐥𝐲 🌺 𝐀𝐝𝐝 [𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭](t.me/{ASSISTANT_USERNAME}) 🎸 𝐢𝐧 𝐓𝐡𝐢𝐬 𝐆𝐫𝐨𝐮𝐩 ♥️ 𝐎𝐫 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐓𝐨 [𝐁𝐨𝐭 𝐎𝐰𝐧𝐞𝐫 ](https://t.me/{OWNER_USERNAME}) ✨ **")
+                        f"**• Pʟᴇᴀsᴇ Mᴀɴᴜᴀʟʟʏ Aᴅᴅ [Assɪsᴛᴀɴᴛ](t.me/{ASSISTANT_USERNAME}) Iɴ Tʜɪs Gʀᴏᴜᴘ Oʀ Cᴀɴᴛᴀᴄᴛ Tᴏ [Bᴏᴛ Oᴡɴᴇʀ ](https://t.me/{OWNER_USERNAME}) • **")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"**🥀 𝐏𝐥𝐞𝐚𝐬𝐞 𝐌𝐚𝐧𝐮𝐚𝐥𝐥𝐲 🌺 𝐀𝐝𝐝 [𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭](t.me/{ASSISTANT_USERNAME}) 🎸 𝐢𝐧 𝐓𝐡𝐢𝐬 𝐆𝐫𝐨𝐮𝐩 ♥️ 𝐎𝐫 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐓𝐨 [𝐁𝐨𝐭 𝐎𝐰𝐧𝐞𝐫 ](https://t.me/{OWNER_USERNAME}) ✨ **")
+            f"**• Pʟᴇᴀsᴇ Mᴀɴᴜᴀʟʟʏ Aᴅᴅ [Assɪsᴛᴀɴᴛ](t.me/{ASSISTANT_USERNAME}) Iɴ Tʜɪs Gʀᴏᴜᴘ Oʀ Cᴀɴᴛᴀᴄᴛ Tᴏ [Bᴏᴛ Oᴡɴᴇʀ ](https://t.me/{OWNER_USERNAME}) • **")
         return
     
     audio = (
@@ -177,12 +177,12 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**💥 𝐏𝐥𝐚𝐲 🔊 𝐌𝐮𝐬𝐢𝐜 💿 𝐋𝐞𝐬𝐬 ⚡️\n🤟 𝐓𝐡𝐚𝐧⚡️ {DURATION_LIMIT} 💞 𝐌𝐢𝐧𝐮𝐭𝐞 ...**"
+                f"**• Pʟᴀʏ Mᴜsɪᴄ Lᴇss\nTʜᴀɴ {DURATION_LIMIT} Mɪɴᴜᴛᴇ • ...**"
             )
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://te.legra.ph/file/ed6920a2f0ab5af3fd55d.png"
+        thumb_name = "https://telegra.ph/file/64dcf7da559b7021edbc3.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -191,21 +191,21 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="🥀 𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 🕊️",
+                            text="• Oᴡɴᴇʀ •",
                             url=f"https://t.me/{OWNER_USERNAME}")
                ],
                [
                     InlineKeyboardButton(
-                            text="📡 𝐔𝐩𝐝𝐚𝐭𝐞𝐬",
+                            text="• Uᴘᴅᴀᴛᴇs •",
                             url=f"{UPDATES_CHANNEL}"),
                             
                     InlineKeyboardButton(
-                            text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭 💬",
+                            text="• Sᴜᴘᴘᴏʀᴛ •",
                             url=f"{SUPPORT_GROUP}")
                ],
                [
                         InlineKeyboardButton(
-                            text="😎 𝐅𝐞𝐞𝐋𝐢𝐧𝐠'𝐒 🌺",
+                            text="• Aʙᴏᴜᴛ •",
                             url=f"{PROFILE_CHANNEL}")
                    
                 ]
@@ -244,21 +244,21 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="🥀 𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 🕊️",
+                            text="• Oᴡɴᴇʀ •",
                             url=f"https://t.me/{OWNER_USERNAME}")
                ],
                [
                     InlineKeyboardButton(
-                            text="📡 𝐔𝐩𝐝𝐚𝐭𝐞𝐬",
+                            text="• Uᴘᴅᴀᴛᴇs •",
                             url=f"{UPDATES_CHANNEL}"),
                             
                     InlineKeyboardButton(
-                            text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭 💬",
+                            text="• Sᴜᴘᴘᴏʀᴛ •",
                             url=f"{SUPPORT_GROUP}")
                ],
                [
                         InlineKeyboardButton(
-                            text="😎 𝐅𝐞𝐞𝐋𝐢𝐧𝐠'𝐒 🌺",
+                            text="• Aʙᴏᴜᴛ •",
                             url=f"{PROFILE_CHANNEL}")
                    
                 ]
@@ -267,28 +267,28 @@ async def play(_, message: Message):
 
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://te.legra.ph/file/ed6920a2f0ab5af3fd55d.png"
+            thumb_name = "https://telegra.ph/file/64dcf7da559b7021edbc3.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                            text="🥀 𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 🕊️",
+                            text="• Oᴡɴᴇʀ •",
                             url=f"https://t.me/{OWNER_USERNAME}")
                ],
                [
                     InlineKeyboardButton(
-                            text="📡 𝐔𝐩𝐝𝐚𝐭𝐞𝐬",
+                            text="• Uᴘᴅᴀᴛᴇs •",
                             url=f"{UPDATES_CHANNEL}"),
                             
                     InlineKeyboardButton(
-                            text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭 💬",
+                            text="• Sᴜᴘᴘᴏʀᴛ •",
                             url=f"{SUPPORT_GROUP}")
                ],
                [
                         InlineKeyboardButton(
-                            text="😎 𝐅𝐞𝐞𝐋𝐢𝐧𝐠'𝐒 🌺",
+                            text="• Aʙᴏᴜᴛ •",
                             url=f"{PROFILE_CHANNEL}")
                    
                 ]
@@ -297,7 +297,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**💥 𝐏𝐥𝐚𝐲 🔊 𝐌𝐮𝐬𝐢𝐜 💿 𝐋𝐞𝐬𝐬 ⚡️\n🤟 𝐓𝐡𝐚𝐧⚡️ {DURATION_LIMIT} 💞 𝐌𝐢𝐧𝐮𝐭𝐞 ...**"
+                f"**• Pʟᴀʏ Mᴜsɪᴄ Lᴇss\nTʜᴀɴ {DURATION_LIMIT} Mɪɴᴜᴛᴇ • ...**"
             )
             return
         requested_by = message.from_user.first_name
@@ -306,9 +306,9 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "**🤖 𝐆𝐢𝐯𝐞 🙃 𝐌𝐮𝐬𝐢𝐜 💿 𝐍𝐚𝐦𝐞 😍\n💞 𝐓𝐨 🔊 𝐏𝐥𝐚𝐲 🥀 𝐒𝐨𝐧𝐠 🌷...**"
+                "**• Gɪᴠᴇ Mᴜsɪᴄ Nᴀᴍᴇ\nTᴏ Pʟᴀʏ Sᴏɴɢ •...**"
             )
-        await lel.edit("**🔄 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 ...**")
+        await lel.edit("**🔄 Pʀᴏᴄᴇssɪɴɢ • ...**")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -333,7 +333,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**🔊 𝐌𝐮𝐬𝐢𝐜 😕 𝐍𝐨𝐭 📵 𝐅𝐨𝐮𝐧𝐝❗️\n💞 𝐓𝐫𝐲 ♨️ 𝐀𝐧𝐨𝐭𝐡𝐞𝐫 🌷...**"
+                "**• Mᴜsɪᴄ Nᴏᴛ Fᴏᴜɴᴅ!\nTʀʏ Aɴᴏᴛɢᴇʀ •...**"
             )
             print(str(e))
             return
@@ -342,21 +342,21 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="🥀 𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 🕊️",
+                            text="• Oᴡɴᴇʀ •",
                             url=f"https://t.me/{OWNER_USERNAME}")
                ],
                [
                     InlineKeyboardButton(
-                            text="📡 𝐔𝐩𝐝𝐚𝐭𝐞𝐬",
+                            text="• Uᴘᴅᴀᴛᴇs •",
                             url=f"{UPDATES_CHANNEL}"),
                             
                     InlineKeyboardButton(
-                            text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭 💬",
+                            text="• Sᴜᴘᴘᴏʀᴛ •",
                             url=f"{SUPPORT_GROUP}")
                ],
                [
                         InlineKeyboardButton(
-                            text="😎 𝐅𝐞𝐞𝐋𝐢𝐧𝐠'𝐒 🌺",
+                            text="• Aʙᴏᴜᴛ •",
                             url=f"{PROFILE_CHANNEL}")
                    
                 ]
@@ -365,7 +365,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**💥 𝐏𝐥𝐚𝐲 🔊 𝐌𝐮𝐬𝐢𝐜 💿 𝐋𝐞𝐬𝐬 ⚡️\n🤟 𝐓𝐡𝐚𝐧⚡️ {DURATION_LIMIT} 💞 𝐌𝐢𝐧𝐮𝐭𝐞 ...**"
+                f"**• Pʟᴀʏ Mᴜsɪᴄ Lᴇss\nTʜᴀɴ {DURATION_LIMIT} Mɪɴᴜᴛᴇ • ...**"
             )
             return
         requested_by = message.from_user.first_name
@@ -379,7 +379,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="**💥 𝐘𝐨𝐮𝐫 🥀 𝐒𝐨𝐧𝐠 💿 𝐐𝐮𝐞𝐮𝐞𝐝❗️\n🔊 𝐀𝐭 💞 𝐏𝐨𝐬𝐢𝐭𝐢𝐨𝐧 » `{}` 🌷 ...**".format(position),
+            caption="**• Yᴏᴜʀ Sᴏɴɢ Qᴜᴇᴜᴇᴅ!\nAᴛ Pᴏsɪᴛɪᴏɴ » `{}` 🌷 ...**".format(position),
             reply_markup=keyboard,
         )
     else:
@@ -396,7 +396,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**💥 𝐌𝐮𝐬𝐢𝐜 🌺 𝐑𝐨𝐛𝐨𝐭 🎸 𝐍𝐨𝐰 💞\n🔊 𝐏𝐥𝐚𝐲𝐢𝐧𝐠 😍 𝐎𝐏 🥀 ...**".format(),
+            caption="**• Rᴏᴍɪ X Rᴏʙᴏᴛ Nᴏᴡ\n Pʟᴀʏɪɴɢ OP • ...**".format(),
            )
 
     os.remove("final.png")
@@ -409,7 +409,7 @@ async def play(_, message: Message):
 async def pause(_, message: Message):
     await message.delete()
     await clientbot.pytgcalls.pause_stream(message.chat.id)
-    await message.reply_text("**▶️ 𝐏𝐚𝐮𝐬𝐞𝐝 🌷 ...**"
+    await message.reply_text("**▶️ Pᴀᴜsᴇᴅ • ...**"
     )
 
 
@@ -419,7 +419,7 @@ async def pause(_, message: Message):
 async def resume(_, message: Message):
     await message.delete()
     await clientbot.pytgcalls.resume_stream(message.chat.id)
-    await message.reply_text("**⏸ 𝐑𝐞𝐬𝐮𝐦𝐞𝐝 🌷 ...**"
+    await message.reply_text("**⏸ Rᴇsᴜᴍᴇᴅ • ...**"
     )
 
 
@@ -435,15 +435,15 @@ async def skip(_, message: Message):
     for x in clientbot.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("**💥 𝐑𝐨𝐛𝐨𝐭 💞 𝐍𝐨𝐭𝐡𝐢𝐧𝐠 🔇\n🚫 𝐏𝐥𝐚𝐲𝐢𝐧𝐠 🌷 ...**")
+        await message.reply_text("**Rᴏᴍɪ X Rᴏʙᴏᴛ Nᴏᴛʜɪɴɢ\nPʟᴀʏɪɴɢ • ...**")
     else:
         queues.task_done(chat_id)
         
         if queues.is_empty(chat_id):
-            await message.reply_text("**🥀 𝑸𝒖𝒆𝒖𝒆 𝑬𝒎𝒑𝒕𝒚, 𝑳𝒆𝒂𝒗𝒊𝒏𝒈 𝑽𝑪 ✨ ...**") 
+            await message.reply_text("**• Qᴜᴇᴜᴇ Eᴍᴘᴛʏ, Lᴇᴀᴠɪɴɢ VC • ...**") 
             await clientbot.pytgcalls.leave_group_call(chat_id)
         else:
-            await message.reply_text("**⏩ 𝐒𝐤𝐢𝐩𝐩𝐞𝐝 🌷 ...**") 
+            await message.reply_text("**⏩ Sᴋɪᴘᴘᴇᴅ • ...**") 
             await clientbot.pytgcalls.change_stream(
                 chat_id, 
                 InputStream(
@@ -466,7 +466,7 @@ async def stop(_, message: Message):
         pass
 
     await clientbot.pytgcalls.leave_group_call(message.chat.id)
-    await message.reply_text("**❌ 𝐒𝐭𝐨𝐩𝐩𝐞𝐝 🌷 ...**"
+    await message.reply_text("**❌ Sᴛᴏᴘᴘᴇᴅ • ...**"
     )
 
 
@@ -481,4 +481,4 @@ async def update_admin(client, message):
     for u in new_ads:
         new_admins.append(u.user.id)
     a[message.chat.id] = new_admins
-    await message.reply_text("**🔥 𝐑𝐞𝐥𝐨𝐚𝐝𝐞𝐝 🌷 ...**")
+    await message.reply_text("**• Rᴇʟᴏᴀᴅᴇᴅ • ...**")
